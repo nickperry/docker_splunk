@@ -5,7 +5,7 @@ The default command for the container is /bin/splunk.sh. This wraps /opt/splunk/
 
 Splunk is configured to run as user splunk.
 
-Run it with 'docker run -d -p 8000:8000 -p 8089:8089 nickperry/splunk' to make the web interface available at http://<your_docker_host>:8000 and the REST API available at https://<your_docker_host>:8089.
+Run it with 'docker run -d -p 8000:8000 -p 8089:8089 nickperry/splunk' to make the web interface available at http://your_docker_host:8000 and the REST API available at https://your_docker_host:8089.
 
 Optionally map a volume to /opt/splunk/var to persist your data.
 
