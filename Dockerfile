@@ -22,6 +22,8 @@ ENV SPLUNK_HOME /opt/splunk
 
 EXPOSE 8000 8089 9997
 
+VOLUME ["/data"]
+VOLUME ["/license"]
 VOLUME ["/opt/splunk/var"]
 
 ### END
