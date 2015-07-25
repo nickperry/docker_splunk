@@ -24,7 +24,7 @@ CMD ["/bin/splunk.sh"]
 
 ENV SPLUNK_HOME /opt/splunk
 
-EXPOSE 8000 8089 9997
+EXPOSE 8000 8089 9997 5514
 
 VOLUME ["/data"]
 VOLUME ["/license"]
