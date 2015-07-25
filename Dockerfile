@@ -13,7 +13,7 @@ RUN wget -O /splunk-6.2.3-264376-linux-2.6-amd64.deb "http://www.splunk.com/page
 # Configure Splunk to run as splunk user 
 RUN sed -i 's/# SPLUNK_OS_USER/SPLUNK_OS_USER=splunk/' /opt/splunk/etc/splunk-launch.conf && mkdir -p /opt/splunk/var /data /license && chown -R splunk:splunk /opt/splunk /data /license
 
-# Create a basic local\web.conf to enable HTTPS for the Splunk web interface
+# Create a basic local/web.conf to enable HTTPS for the Splunk web interface
 RUN echo '[settings]\nenableSplunkWebSSL = true\nprivKeyPath = etc/auth/splunkweb/privkey.pem\ncaCertPath = etc/auth/splunkweb/cert.pem' >> /opt/splunk/etc/system/local/web.conf && \
     chown splunk:splunk /opt/splunk/etc/system/local/web.conf
 
