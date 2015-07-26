@@ -37,11 +37,9 @@ Access the Splunk web interface at https://your_docker_host:8000
 
 Access the Splunk REST API at https://your_docker_host:8089
 
-Send events to your_docker_host:7999 from a Splunk forwarder.
+Use the GUI or API to configure forwarded inputs and send events to your_docker_host:7999 from a Splunk forwarder.
 
-If you also mapped port 514 you can set up a UDP listener (and optionally a TCP listener) on 5514 and receive syslog events from other hosts:
-
-https://your_docker_host:8000/en-US/manager/search/adddata/selectsource?input_type=udp&input_mode=1
+If you also mapped port 514 you can use the GUI or API to configure a UDP input (and optionally a TCP input) on 5514 and receive syslog events from other hosts.
 
 Splunk can take a little while to shut down, so it is best practice to specify a longer timeout to the docker stop command (docker stop -t 60), otherwise it is likely that docker's default 10s stop timeout will be breached and the splunk processes will get SIGKILLed.
 
