@@ -41,6 +41,11 @@ Use the GUI or API to configure forwarded inputs and send events to your_docker_
 
 If you also mapped port 514 you can use the GUI or API to configure a UDP input (and optionally a TCP input) on 5514 and receive syslog events from other hosts.
 
+#
+
+Stopping
+----------------------------------------------------------------------
+
 Splunk can take a little while to shut down, so it is best practice to specify a longer timeout to the docker stop command (docker stop -t 60), otherwise it is likely that docker's default 10s stop timeout will be breached and the splunk processes will get SIGKILLed.
 
 Enjoy your container of Splunk!
