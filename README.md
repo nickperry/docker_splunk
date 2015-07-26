@@ -43,6 +43,6 @@ If you also mapped port 514 you can set up a UDP listener (and optionally a TCP 
 
 https://your_docker_host:8000/en-US/manager/search/adddata/selectsource?input_type=udp&input_mode=1
 
-Splunk can take a little while to shut down, so I highly recommend specifying a longer timeout to the docker stop command (docker stop -t 60), otherwise it is likely that docker's default 10s stop timeout will be breached and the splunk processes will get SIGKILLed.
+Splunk can take a little while to shut down, so it is best practice to specify a longer timeout to the docker stop command (docker stop -t 60), otherwise it is likely that docker's default 10s stop timeout will be breached and the splunk processes will get SIGKILLed.
 
 Enjoy your container of Splunk!
