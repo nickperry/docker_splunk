@@ -5,7 +5,9 @@ The default command for the container is /bin/splunk.sh. This wraps /opt/splunk/
 
 Splunk is configured to run as user splunk.
 
-Run it with 'docker run -d -p 8000:8000 -p 8089:8089 -p 7999:7999 nickperry/splunk' to make the web interface available at https://your_docker_host:8000 and the REST API available at https://your_docker_host:8089. 7999 is the port for sending data to from a forwarder. If you would like to accept syslog on port 514, add -p 514:5514 and add a udp/tcp syslog listener in your splunk config, listening on 5514.
+Run it with 'docker run -d -p 8000:8000 -p 8089:8089 -p 7999:7999 nickperry/splunk' to make the web interface available at https://your_docker_host:8000 and the REST API available at https://your_docker_host:8089. 7999 is the port for sending data to from a forwarder.
+
+If you would like to accept syslog on port 514, add "-p 514:5514/udp -p 514:5514/tcp" when you docker run and add a udp/tcp syslog listener in your splunk config, listening on 5514.
 
 Optionally map a volume to /opt/splunk/var to persist your indexed data. /data can be mapped as a path to load data into Splunk from files.
 
