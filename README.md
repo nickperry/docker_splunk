@@ -22,6 +22,10 @@ If you would like to accept syslog on port 514, add '-p 514:5514/udp -p 514:5514
 
     $ docker run -d -p 8000:8000 -p 8089:8089 -p 7999:7999 -p 514:5514/udp -p 514:5514/tcp nickperry/splunk
 
+If you would like to use the HTTP event collector, add '-p 8088:8088/tcp':
+
+    $ docker run -d -p 8000:8000 -p 8089:8089 -p 7999:7999 -p 514:5514/udp -p 514:5514/tcp -p 8088:8088/tcp nickperry/splunk 
+
 Optionally map a volume to /opt/splunk/var to persist your indexed data.
 
 /data can be mapped as a path to load data into Splunk from files. Mounting /data from another container is a convenient way to access logs in that container in an ad-hoc fashion - taking Splunk to the data rather than taking the data to Splunk. 
